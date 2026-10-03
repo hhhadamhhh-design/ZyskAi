@@ -77,7 +77,7 @@ W comparables oznacz wyraźnie, czy każda oferta jest używana czy nowa.
   ? result.comparables.filter(o => o.condition === "używany")
   : [];
 
-if (usedOffers.length < 3 && result.decision === "KUP") {
+if (usedOffers.length < 3) {
   result.decision = "NEGOCJUJ";
   result.risk = "wysokie";
 result.reason = "Za mało wiarygodnych ofert używanych do pewnej wyceny. Znaleziono " + usedOffers.length + " zamiast minimum 3. " + (result.reason || "");
