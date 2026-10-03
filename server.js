@@ -42,6 +42,10 @@ Preferuj polski rynek: OLX, Allegro, Allegro Lokalnie i inne wiarygodne polskie 
 Porównuj stan, wersję, pojemność, platformę, kompletność zestawu i inne cechy wpływające na cenę.
 Quick_sale ma oznaczać realistyczną cenę szybkiej sprzedaży używanego przedmiotu, a nie średnią cenę ofertową.
 Jeśli nie znajdziesz wystarczających ofert używanych, wyraźnie zaznacz to w reason i obniż confidence.
+  Do wiarygodnej wyceny użyj minimum 3 porównywalnych ofert używanych, a jeśli to możliwe 5 lub więcej.
+Odrzucaj ceny wyraźnie odstające od pozostałych ofert, zarówno podejrzanie niskie, jak i zawyżone.
+Nie opieraj wyceny na jednej ofercie.
+Jeśli znajdziesz mniej niż 3 dobre porównania, ustaw wyższe ryzyko i obniż confidence.
     const response = await client.responses.create({
       model: "gpt-6-luna",
       tools: [{ type: "web_search" }],
