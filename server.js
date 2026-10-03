@@ -51,6 +51,9 @@ KUP tylko jeśli przewidywany zysk po kosztach wynosi minimum 30 zł i ROI minim
 NEGOCJUJ jeśli przedmiot może być opłacalny po obniżeniu ceny zakupu albo ROI jest bliskie 25%.
 ODRZUĆ jeśli przewidywany zysk jest poniżej 30 zł, ROI poniżej 20% lub ryzyko jest wysokie.
 Max_buy wylicz tak, aby po wszystkich kosztach pozostał co najmniej wymagany minimalny zysk i odpowiednie ROI.
+  Minimum 3 porównania muszą dotyczyć ofert UŻYWANYCH. Oferty nowe NIE liczą się do wymaganego minimum 3 porównań.
+Jeśli znajdziesz mniej niż 3 wiarygodne oferty używane, nie ustawiaj decyzji KUP; ustaw NEGOCJUJ albo BRAK DANYCH i obniż confidence.
+W comparables oznacz wyraźnie, czy każda oferta jest używana czy nowa.
     const response = await client.responses.create({
       model: "gpt-6-luna",
       tools: [{ type: "web_search" }],
