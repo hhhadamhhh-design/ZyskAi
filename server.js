@@ -55,6 +55,7 @@ Nie nazywaj czegoś okazją, jeśli dane są słabe.`;
     catch { return res.status(502).json({error:"AI zwróciło niepoprawny format.", raw}); }
 
     result.buyPrice = buyPrice;
+    if (result.confidence <= 1) result.confidence = Math.round(result.confidence * 100);
     res.json(result);
   } catch (e) {
     res.status(500).json({error: e?.message || "Błąd analizy."});
