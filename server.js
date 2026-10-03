@@ -75,7 +75,7 @@ W comparables oznacz wyraźnie, czy każda oferta jest używana czy nowa.
     if (result.confidence <= 1) result.confidence = Math.round(result.confidence * 100);
     const usedOffers = Array.isArray(result.comparables)
   ? result.comparables.filter(o =>
-      /używan/i.test(o.condition || "") || /używan/i.test(o.title || "")
+      /używan/i.test((o.condition || "") + " " + (o.title || ""))
     )
   : [];
   
