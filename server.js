@@ -46,6 +46,11 @@ Jeśli nie znajdziesz wystarczających ofert używanych, wyraźnie zaznacz to w 
 Odrzucaj ceny wyraźnie odstające od pozostałych ofert, zarówno podejrzanie niskie, jak i zawyżone.
 Nie opieraj wyceny na jednej ofercie.
 Jeśli znajdziesz mniej niż 3 dobre porównania, ustaw wyższe ryzyko i obniż confidence.
+  Przy obliczaniu estimated_costs uwzględnij realistyczne koszty sprzedaży, prowizje platformy, możliwą wysyłkę oraz niewielki margines bezpieczeństwa.
+KUP tylko jeśli przewidywany zysk po kosztach wynosi minimum 30 zł i ROI minimum 25%, a ryzyko nie jest wysokie.
+NEGOCJUJ jeśli przedmiot może być opłacalny po obniżeniu ceny zakupu albo ROI jest bliskie 25%.
+ODRZUĆ jeśli przewidywany zysk jest poniżej 30 zł, ROI poniżej 20% lub ryzyko jest wysokie.
+Max_buy wylicz tak, aby po wszystkich kosztach pozostał co najmniej wymagany minimalny zysk i odpowiednie ROI.
     const response = await client.responses.create({
       model: "gpt-6-luna",
       tools: [{ type: "web_search" }],
