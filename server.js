@@ -36,7 +36,12 @@ Zwróć WYŁĄCZNIE JSON:
 }
 Profit = quick_sale - buyPrice - estimated_costs. ROI = profit/buyPrice*100.
 Nie nazywaj czegoś okazją, jeśli dane są słabe.`;
-
+Przy wycenie w pierwszej kolejności szukaj ofert UŻYWANYCH egzemplarzy dokładnie tego samego produktu, modelu i wariantu.
+Oferty nowe traktuj tylko pomocniczo i nie używaj ich jako głównej podstawy wyceny używanego przedmiotu.
+Preferuj polski rynek: OLX, Allegro, Allegro Lokalnie i inne wiarygodne polskie źródła.
+Porównuj stan, wersję, pojemność, platformę, kompletność zestawu i inne cechy wpływające na cenę.
+Quick_sale ma oznaczać realistyczną cenę szybkiej sprzedaży używanego przedmiotu, a nie średnią cenę ofertową.
+Jeśli nie znajdziesz wystarczających ofert używanych, wyraźnie zaznacz to w reason i obniż confidence.
     const response = await client.responses.create({
       model: "gpt-6-luna",
       tools: [{ type: "web_search" }],
