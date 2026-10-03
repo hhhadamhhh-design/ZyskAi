@@ -32,7 +32,7 @@ Zwróć WYŁĄCZNIE JSON:
  "decision":"KUP|NEGOCJUJ|ODRZUĆ|BRAK DANYCH",
  "risk":"niskie|średnie|wysokie",
  "reason":"krótkie uzasadnienie",
- "comparables":[{"title":"","price":0,"url":""}]
+"comparables":[{"title":"","price":0,"url":"","condition":"używany|nowy|nieznany"}]
 }
 Profit = quick_sale - buyPrice - estimated_costs. ROI = profit/buyPrice*100.
 Nie nazywaj czegoś okazją, jeśli dane są słabe.`;
