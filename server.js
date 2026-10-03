@@ -73,6 +73,14 @@ W comparables oznacz wyraźnie, czy każda oferta jest używana czy nowa.
 
     result.buyPrice = buyPrice;
     if (result.confidence <= 1) result.confidence = Math.round(result.confidence * 100);
+    const usedOffers = Array.isArray(result.comparables)
+  ? result.comparables.filter(o => /używan/i.test(o.title || ""))
+  : [];
+
+if (usedOffers.length < 3 && result.decision === "KUP") {
+  result.decision = "NEGOCJUJ";
+  result.risk = "wysokie";
+}
     res.json(result);
   } catch (e) {
     res.status(500).json({error: e?.message || "Błąd analizy."});
