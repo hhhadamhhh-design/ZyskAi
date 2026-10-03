@@ -80,6 +80,7 @@ W comparables oznacz wyraźnie, czy każda oferta jest używana czy nowa.
 if (usedOffers.length < 3 && result.decision === "KUP") {
   result.decision = "NEGOCJUJ";
   result.risk = "wysokie";
+result.reason = "Za mało wiarygodnych ofert używanych do pewnej wyceny. Znaleziono " + usedOffers.length + " zamiast minimum 3. " + (result.reason || "");
 }
     res.json(result);
   } catch (e) {
