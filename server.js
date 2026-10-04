@@ -20,7 +20,7 @@ app.post("/api/analyze", upload.single("image"), async (req, res) => {
 
     const prompt = `Jesteś silnikiem ZyskAI dla polskiego rynku rzeczy używanych.
 Rozpoznaj przedmiot na zdjęciu. Użytkownik może kupić go za ${buyPrice} PLN.
-Obsługiwane kategorie: elektronika, elektronarzędzia, gry/konsole, foto, LEGO.
+Obsługuj wszystkie legalne przedmioty, które mają wartość rynkową i mogą być odsprzedawane. Kategorie obejmują m.in.: samochody, motocykle, skutery, rowery, hulajnogi, części samochodowe, elektronikę, telefony, smartwatche, tablety, laptopy, komputery, monitory, telewizory, aparaty, obiektywy, drony, konsole, gry, sprzęt audio, słuchawki, AGD, narzędzia, elektronarzędzia, sprzęt budowlany, ogrodowy i warsztatowy, meble, wyposażenie domu, dekoracje, oświetlenie, sprzęt sportowy, fitness, turystyczny i wędkarski, zabawki, LEGO, modele, kolekcje, antyki, przedmioty vintage i PRL, książki, płyty, instrumenty muzyczne, zegarki, biżuterię, odzież, obuwie, torebki, akcesoria, artykuły dziecięce, wózki, foteliki oraz inne przedmioty posiadające rynek wtórny. Nie odrzucaj produktu tylko dlatego, że nie znajduje się na tej liście.
 Jeśli dokładny wariant/model jest niepewny, NIE zgaduj: ustaw needs_more_info=true i napisz, jakiego zdjęcia/danych potrzeba.
 Jeśli identyfikacja jest wystarczająca, użyj web search do znalezienia aktualnych polskich cen porównywalnych ofert. Odróżnij cenę ofertową od ceny szybkiej sprzedaży i zaznacz niepewność.
 Zwróć WYŁĄCZNIE JSON:
