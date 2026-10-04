@@ -54,6 +54,10 @@ Max_buy wylicz tak, aby po wszystkich kosztach pozostał co najmniej wymagany mi
   Minimum 3 porównania muszą dotyczyć ofert UŻYWANYCH. Oferty nowe NIE liczą się do wymaganego minimum 3 porównań.
 Jeśli znajdziesz mniej niż 3 wiarygodne oferty używane, nie ustawiaj decyzji KUP; ustaw NEGOCJUJ albo BRAK DANYCH i obniż confidence.
 W comparables oznacz wyraźnie, czy każda oferta jest używana czy nowa.
+  Każde porównanie w comparables musi prowadzić do konkretnego pojedynczego ogłoszenia produktu, a nie do strony wyników wyszukiwania, listy ofert ani kategorii.
+Nie używaj jako porównania stron zbiorczych OLX, Allegro, Allegro Lokalnie, Ceneo ani sklepów.
+Preferuj konkretne aktywne ogłoszenia używanego produktu tego samego modelu i możliwie podobnej wersji oraz stanu.
+Jeśli nie znajdziesz minimum 3 konkretnych porównywalnych ofert używanych, ustaw needs_more_info=true i nie wydawaj decyzji KUP.
     const response = await client.responses.create({
       model: "gpt-6-luna",
       tools: [{ type: "web_search" }],
